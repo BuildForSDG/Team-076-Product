@@ -8,7 +8,7 @@ import People from '../components/People'
 const Routes = () => {
     return (
       <Switch>
-          <Route exact path="/" component={Features}/>
+          <Route exact path="/" component={Features} />
           <Route path="/blog" component={Blog}/>
           <Route path="/People" component={People}/>
           <Route path="/questions" component={Questions}/>

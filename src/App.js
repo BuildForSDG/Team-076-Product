@@ -1,18 +1,20 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Navbar from "./Nav/Navbar";
 import Routes from "./routes/Routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import ModalManager from "./Modals/ModalManager";
+import { CSSReset } from "@chakra-ui/core";
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <ModalManager />
         <Navbar />
         <Routes />
-      </Router>
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;

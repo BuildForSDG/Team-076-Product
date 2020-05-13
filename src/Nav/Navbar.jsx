@@ -2,15 +2,25 @@ import React, {Component} from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import cx from "classnames";
+import { connect } from "react-redux";
+import {openModal} from '../Modals/ModalActions'
+
+
+const matchDispatchToProps = {
+  openModal
+};
 
 class Navbar extends Component {
+  handleSignIn = () => {
+    this.props.openModal('LoginModal');
+  };
   render() {
     return (
-      <nav>
+      <nav className={styles.grid}>
         <div className={cx(styles.logo)}>
           <h3>FARMAPP</h3>
         </div>
-        <ul>
+        <ul className={styles.navlinks}>
           <li>
             <NavLink
               exact
@@ -50,8 +60,8 @@ class Navbar extends Component {
           </li>
         </ul>
         <div className={styles.navlast}>
-          <NavLink to="/loginmodal">
-            <button className={styles.navbutton}>Login</button>
+          <NavLink to="">
+            <button onClick={this.handleSignIn} className={styles.navbutton}>Login</button>
           </NavLink>
         </div>
       </nav>
@@ -59,4 +69,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default connect(null,matchDispatchToProps)(Navbar);

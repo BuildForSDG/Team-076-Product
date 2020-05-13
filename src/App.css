@@ -7,3 +7,14 @@ body, html {
 body {
   min-height: 100%;
 }
+
+body::-webkit-scrollbar {
+  width: 0.1rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #13031E;
+}
+body::-webkit-scrollbar-thumb {
+  background:#13031E;
+}

@@ -2,19 +2,16 @@ import React, {Component} from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import cx from "classnames";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import {openModal} from '../Modals/ModalActions'
 
 
-const matchDispatchToProps = {
-  openModal
-};
 
-class Navbar extends Component {
-  handleSignIn = () => {
-    this.props.openModal('LoginModal');
-  };
-  render() {
+
+const Navbar = () => {
+
+  const dispatch = useDispatch();
+  
     return (
       <nav className={styles.grid}>
         <div className={cx(styles.logo)}>
@@ -61,12 +58,11 @@ class Navbar extends Component {
         </ul>
         <div className={styles.navlast}>
           <NavLink to="">
-            <button onClick={this.handleSignIn} className={styles.navbutton}>Login</button>
+            <button onClick={() => dispatch(openModal('LoginModal'))} className={styles.navbutton}>Login</button>
           </NavLink>
         </div>
       </nav>
     );
   }
-}
 
-export default connect(null,matchDispatchToProps)(Navbar);
+export default Navbar;

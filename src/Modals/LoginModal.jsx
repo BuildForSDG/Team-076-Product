@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, {useRef} from "react";
 import { closeModal } from "./ModalActions";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   Modal,
   ModalOverlay,
@@ -8,36 +8,53 @@ import {
   ModalHeader,
   ModalFooter,
   ModalBody,
+  FormControl,
+  FormLabel,
+  Input,
+  Button,
+  ModalCloseButton
 } from "@chakra-ui/core";
+import styles from './Modals.module.css';
 
-const mapDispatchToProps = {
-  closeModal,
+
+const LoginModal = () => {
+  const initialRef = useRef();
+  const dispatch = useDispatch();
+  const closemodal = () => {
+    dispatch(closeModal());
+  };
+  return (
+    <Modal
+      
+      isOpen={true}
+      onClose={closemodal}
+      isCentered={true}
+      closeOnOverlayClick={true}
+    >
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader pt={5}>Login</ModalHeader>
+        <ModalBody pb={6}>
+          <FormControl isRequired>
+            <FormLabel>Phone Number</FormLabel>
+            <Input ref={initialRef} width="90%"placeholder="+90348230984" />
+          </FormControl>
+
+          <FormControl isRequired mt={4}>
+            <FormLabel>Password</FormLabel>
+            <Input width="90%" placeholder="**********" />
+          </FormControl>
+        </ModalBody>
+
+        <ModalFooter alignItems="center">
+          <Button className={styles.navbutton} bg="green.900" variantColor="green" mr={3}>
+            Login
+          </Button>
+          <Button className={styles.navbutton} onClick={closemodal}>Cancel</Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
 };
 
-class LoginModal extends Component {
-  render() {
-    return (
-      <Modal
-        size={"md"}
-        isOpen={true}
-        onClose={this.props.closeModal}
-        isCentered={true}
-        closeOnOverlayClick={true}
-        
-      >
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Login</ModalHeader>
-          <ModalBody>
-              Testing the modal
-          </ModalBody>
-          <ModalFooter>
-              foot
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-    );
-  }
-}
-
-export default connect(null, mapDispatchToProps)(LoginModal);
+export default LoginModal;

@@ -18,25 +18,22 @@ const customTheme = {
       900: "#31C28C",
       800: "#57B894",
       700: "#75DFB8",
-    }
+    },
   },
 };
 
 const store = ReduxStoreConfig();
 
-console.log(store.getState());
-
 ReactDOM.render(
   <ThemeProvider theme={customTheme}>
     <Provider store={store}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <App />
-      </React.StrictMode>
-    </BrowserRouter>
-  </Provider>
-  </ThemeProvider>
-  ,
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </Provider>
+  </ThemeProvider>,
   document.getElementById("root")
 );
 

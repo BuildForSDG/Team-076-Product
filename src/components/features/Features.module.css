@@ -1,24 +1,20 @@
 .container {
-    background: #F3FDFE;
-    height: calc(100vh - 75px);
-    place-items: center;
+  background: #f3fdfe;
+  height: calc(100vh - 75px);
+  place-items: center;
 }
-
-
 
 .herotext {
-    
-    font-size: 25px;
-    padding-bottom: 35px;
-    color: #13031E;
+  font-size: 25px;
+  padding-bottom: 35px;
+  color: #13031e;
 }
 
-
 .navbutton {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    border-radius: 5px;
-    padding-left: 20px;
-    border: none;
-    text-decoration: none;
-  }
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-left: 20px;
+  border: none;
+  text-decoration: none;
+}

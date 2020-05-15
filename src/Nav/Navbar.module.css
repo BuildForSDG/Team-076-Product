@@ -1,77 +1,71 @@
-  
-
-nav{
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 10px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background: #ffffff; 
+nav {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: #ffffff;
 }
 
-.logo{
-    display: grid;
-    align-items: center;
-    padding-left: 20px;
-    color:#31C28C;
-    font-size:1.2rem;
+.logo {
+  display: grid;
+  align-items: center;
+  padding-left: 20px;
+  color: #31c28c;
+  font-size: 1.2rem;
 }
 
-nav ul{
-    display:grid;
-    justify-content:start;
-     grid-auto-flow:column;
-    align-items:center;
-    gap:30px;
-    margin-left: 70px;
-  }
+nav ul {
+  display: grid;
+  justify-content: start;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 30px;
+  margin-left: 70px;
+}
 
-  .navlast {
-      display: grid;
-      justify-content: end;
-      padding-right: 20px;
-     
-  }
+.navlast {
+  display: grid;
+  justify-content: end;
+  padding-right: 20px;
+}
 
-  nav ul li{
-    list-style:none;
-  }
-   a{
-    text-decoration:none;
-  }
+nav ul li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
 
-  .navbarlink {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 1em;
-    text-decoration: none;
-    color: #707070;
-   
-  }
-  
-  .navbarlink:hover {
-    transform: translateY(-2px);
-  }
-  
-  .navbaractive {
-    color: #31C28C;
-    transition: color .5s ease-in-out;
-  }
+.navbarlink {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1em;
+  text-decoration: none;
+  color: #707070;
+}
 
-   /* top right bottom left */
-  .navbutton {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    background: #31C28C;
-    color: white;
-    padding: 10px 25px 10px 25px;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: none;
-    text-decoration: none;
-  }
+.navbarlink:hover {
+  transform: translateY(-2px);
+}
 
-  
+.navbaractive {
+  color: #31c28c;
+  transition: color 0.5s ease-in-out;
+}
+
+/* top right bottom left */
+.navbutton {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  background: #31c28c;
+  color: white;
+  padding: 10px 25px 10px 25px;
+  margin-top: 20px;
+  border-radius: 5px;
+  border: none;
+  text-decoration: none;
+}

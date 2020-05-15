@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
-import { ReduxStoreConfig } from "./store/ReduxStoreConfig";
+import { reduxStoreConfig } from "./store/ReduxStoreConfig";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@chakra-ui/core";
 import { theme } from "@chakra-ui/core";
@@ -22,7 +22,7 @@ const customTheme = {
   },
 };
 
-const store = ReduxStoreConfig();
+const store = reduxStoreConfig();
 
 ReactDOM.render(
   <ThemeProvider theme={customTheme}>

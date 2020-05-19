@@ -19,8 +19,10 @@ import {
 } from "@chakra-ui/core";
 import { useForm } from "react-hook-form";
 import styles from "./Modals.module.css";
+import { login } from "../auth/authActions";
 
 const LoginModal = () => {
+  //const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handlePasswordToggle = () => setShow(!show);
   const { register, handleSubmit, formState, errors } = useForm();
@@ -42,6 +44,7 @@ const LoginModal = () => {
   };
 
   const onSubmit = (data) => {
+    dispatch(login(data));
     alert(JSON.stringify(data, null, 2));
   };
 
@@ -102,6 +105,7 @@ const LoginModal = () => {
 
           <ModalFooter alignItems="center">
             <Button
+              //onClick={()=>dispatch(closeModal())}
               className={styles.navbutton}
               bg="green.900"
               variantColor="green"

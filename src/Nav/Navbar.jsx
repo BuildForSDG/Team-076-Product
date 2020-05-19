@@ -2,11 +2,14 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import cx from "classnames";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../Modals/ModalActions";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const currentUser = useSelector((state) => state.auth);
+
+  const authenticated = currentUser.authenticated;
 
   return (
     <nav className={styles.grid}>
@@ -42,25 +45,29 @@ const Navbar = () => {
             Questions
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            activeClassName={styles.navbaractive}
-            className={styles.navbarlink}
-            to="/blog"
-          >
-            Blog
-          </NavLink>
-        </li>
+        {authenticated && (
+          <li>
+            <NavLink
+              activeClassName={styles.navbaractive}
+              className={styles.navbarlink}
+              to="/blog"
+            >
+              Blog
+            </NavLink>
+          </li>
+        )}
       </ul>
       <div className={styles.navlast}>
-        <NavLink to="">
-          <button
-            onClick={() => dispatch(openModal("LoginModal"))}
-            className={styles.navbutton}
-          >
-            Login
-          </button>
-        </NavLink>
+        {authenticated || (
+          <NavLink to="">
+            <button
+              onClick={() => dispatch(openModal("LoginModal"))}
+              className={styles.navbutton}
+            >
+              Login
+            </button>
+          </NavLink>
+        )}
       </div>
     </nav>
   );

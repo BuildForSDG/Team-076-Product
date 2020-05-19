@@ -3,7 +3,6 @@ import "./App.css";
 import Navbar from "./Nav/Navbar";
 import Routes from "./routes/Routes";
 import ModalManager from "./Modals/ModalManager";
-import { CSSReset } from "@chakra-ui/core";
 
 class App extends Component {
   render() {

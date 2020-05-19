@@ -1,11 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function People() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return <div></div>;
 }
 
-export default People
+export default People;

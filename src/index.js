@@ -19,6 +19,7 @@ const customTheme = {
       800: "#57B894",
       700: "#75DFB8",
     },
+    grey: "#C3D1D2",
   },
 };
 

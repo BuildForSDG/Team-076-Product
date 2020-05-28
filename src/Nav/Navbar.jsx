@@ -4,6 +4,7 @@ import styles from "./Navbar.module.css";
 import cx from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../Modals/ModalActions";
+import { Stack, Icon, Text } from "@chakra-ui/core";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,15 @@ const Navbar = () => {
             to="/questions"
           >
             Questions
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            activeClassName={styles.navbaractive}
+            className={styles.navbarlink}
+            to="/createpost"
+          >
+            <Icon name="edit" size="24px" />
           </NavLink>
         </li>
         {authenticated && (

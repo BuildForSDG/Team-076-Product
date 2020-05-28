@@ -4,6 +4,7 @@ import Features from "../components/features/Features";
 import Questions from "../components/Questions";
 import People from "../components/People";
 import Blog from "../components/blog/Blog";
+import CreatePost from "../components/blog/CreatePost";
 
 const Routes = () => {
   return (
@@ -12,6 +13,7 @@ const Routes = () => {
       <Route path="/blog" component={Blog} />
       <Route path="/People" component={People} />
       <Route path="/questions" component={Questions} />
+      <Route path="/createpost" component={CreatePost} />
     </Switch>
   );
 };

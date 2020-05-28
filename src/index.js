@@ -20,6 +20,7 @@ const customTheme = {
       700: "#75DFB8",
     },
     grey: "#C3D1D2",
+    blueblack: "#13031E"
   },
 };
 

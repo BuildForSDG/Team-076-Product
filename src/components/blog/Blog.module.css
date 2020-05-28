@@ -22,3 +22,12 @@
   font-size: 1.5rem;
   padding-bottom: 7px;
 }
+
+.navbutton {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  border-radius: 5px;
+  padding-left: 20px;
+  border: none;
+  text-decoration: none;
+}

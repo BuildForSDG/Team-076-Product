@@ -1,30 +1,30 @@
-
-//This component has been deprecated
-//Check GridNav
-
-
-
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Grid, Box, List, ListItem, Icon, Button } from "@chakra-ui/core";
 import styles from "./Navbar.module.css";
+import { NavLink } from "react-router-dom";
 import cx from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../Modals/ModalActions";
-import { Stack, Icon, Text } from "@chakra-ui/core";
 
-const Navbar = () => {
+const GridNav = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector((state) => state.auth);
-
   const authenticated = currentUser.authenticated;
 
   return (
-    <nav className={styles.grid}>
-      <div className={cx(styles.logo)}>
-        <h3>FARMAPP</h3>
-      </div>
-      <ul className={styles.navlinks}>
-        <li>
+    <Grid
+      className={styles.nav}
+      autoRows="auto"
+      templateColumns="repeat(12, 1fr)"
+      gap={4}
+    >
+      <Box gridColumn="1/4">
+        <div className={cx(styles.logo)}>
+          <h3>FARMAPP</h3>
+        </div>
+      </Box>
+      <Box gridColumn="4/9">
+        <List display={{sm: "none", md: "grid", lg: "grid", xl: "grid"}} className={styles.innerGrid}>
           <NavLink
             exact
             activeClassName={styles.navbaractive}
@@ -33,8 +33,6 @@ const Navbar = () => {
           >
             Features
           </NavLink>
-        </li>
-        <li>
           <NavLink
             activeClassName={styles.navbaractive}
             className={styles.navbarlink}
@@ -42,8 +40,6 @@ const Navbar = () => {
           >
             People
           </NavLink>
-        </li>
-        <li>
           <NavLink
             activeClassName={styles.navbaractive}
             className={styles.navbarlink}
@@ -51,8 +47,6 @@ const Navbar = () => {
           >
             Questions
           </NavLink>
-        </li>
-        <li>
           <NavLink
             activeClassName={styles.navbaractive}
             className={styles.navbarlink}
@@ -60,33 +54,29 @@ const Navbar = () => {
           >
             <Icon name="edit" size="24px" />
           </NavLink>
-        </li>
-        {authenticated && (
-          <li>
-            <NavLink
-              activeClassName={styles.navbaractive}
-              className={styles.navbarlink}
-              to="/blog"
-            >
-              Blog
-            </NavLink>
-          </li>
-        )}
-      </ul>
-      <div className={styles.navlast}>
-        {authenticated || (
-          <NavLink to="">
-            <button
-              onClick={() => dispatch(openModal("LoginModal"))}
-              className={styles.navbutton}
-            >
-              Login
-            </button>
+          <NavLink
+            activeClassName={styles.navbaractive}
+            className={styles.navbarlink}
+            to="/blog"
+          >
+            Blog
           </NavLink>
+        </List>
+      </Box>
+      <Box justifySelf="end" pr="20px"  gridColumn="10/13">
+        {authenticated || (
+          <Button
+            onClick={() => dispatch(openModal("LoginModal"))}
+            className={styles.navbutton}
+            variantColor="green"
+            bg="fgreen.900"
+          >
+            Login
+          </Button>
         )}
-      </div>
-    </nav>
+      </Box>
+    </Grid>
   );
 };
 
-export default Navbar;
+export default GridNav;

@@ -9,6 +9,14 @@ nav {
   background: white;
 }
 
+.nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background: white;
+}
+
 .logo {
   display: grid;
   align-items: center;
@@ -44,7 +52,7 @@ a {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   cursor: pointer;
-  margin: 1em;
+  margin: 1em 1em 0 1em;
   text-decoration: none;
   color: #707070;
 }
@@ -69,4 +77,12 @@ a {
   border-radius: 5px;
   border: none;
   text-decoration: none;
+}
+
+
+/*GridNav*/
+
+.innerGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }

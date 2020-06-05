@@ -14,9 +14,11 @@ import {
   Button,
   Select,
   FormErrorMessage,
+  useToast,
 } from "@chakra-ui/core";
 import styles from "./Modals.module.css";
 import { useForm } from "react-hook-form";
+import { useHistory } from "react-router-dom";
 
 const RegisterModal = () => {
   const { register, handleSubmit, formState, errors } = useForm();
@@ -29,8 +31,24 @@ const RegisterModal = () => {
     return error || true;
   };
 
+  const toast = useToast();
+
+  const showToast = () =>{
+    return toast({
+      title: "Account created.",
+      description: "We've created your account for you.",
+      status: "success",
+      duration: 5000,
+    });
+  };
+
+  const history = useHistory();
+
   const onSubmit = (data) => {
     alert(JSON.stringify(data, null, 2));
+    closemodal();
+    history.push("/blog");
+    showToast();
   };
 
   const initialRef = useRef();
@@ -110,7 +128,7 @@ const RegisterModal = () => {
           <ModalFooter alignItems="center">
             <Button
               className={styles.navbutton}
-              bg="green.900"
+              bg="fgreen.900"
               variantColor="green"
               mr={3}
               isDisabled={!formState.dirty}

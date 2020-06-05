@@ -9,12 +9,19 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "@chakra-ui/core";
 import { theme } from "@chakra-ui/core";
 
-// Let's say you want to add custom colors
+// customing theming forn chakra
+
+const breakpoints = ["320px", "620px", "960px", "1200px"];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
 const customTheme = {
   ...theme,
   colors: {
     ...theme.colors,
-    green: {
+    fgreen: {
       900: "#31C28C",
       800: "#57B894",
       700: "#75DFB8",
@@ -22,6 +29,7 @@ const customTheme = {
     grey: "#C3D1D2",
     blueblack: "#13031E"
   },
+breakpoints
 };
 
 const store = reduxStoreConfig();

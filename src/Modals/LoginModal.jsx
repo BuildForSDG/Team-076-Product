@@ -16,16 +16,19 @@ import {
   InputGroup,
   InputRightElement,
   Icon,
+  useToast,
 } from "@chakra-ui/core";
 import { useForm } from "react-hook-form";
 import styles from "./Modals.module.css";
 import { login } from "../auth/authActions";
+import { useHistory } from "react-router-dom";
 
 const LoginModal = () => {
   //const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const handlePasswordToggle = () => setShow(!show);
   const { register, handleSubmit, formState, errors } = useForm();
+  const history = useHistory();
 
   const validateName = (value) => {
     let error;
@@ -43,9 +46,24 @@ const LoginModal = () => {
     return error || true;
   };
 
+  const toast = useToast();
+
+  const showToast = () =>{
+    return toast({
+      title: "Login successful",
+      description: "Welcome back!",
+      status: "success",
+      duration: 5000,
+    });
+  };
+
   const onSubmit = (data) => {
     dispatch(login(data));
     alert(JSON.stringify(data, null, 2));
+    closemodal();
+    history.push("/allposts");
+    showToast();
+
   };
 
   const initialRef = useRef();
@@ -107,7 +125,7 @@ const LoginModal = () => {
             <Button
               //onClick={()=>dispatch(closeModal())}
               className={styles.navbutton}
-              bg="green.900"
+              bg="fgreen.900"
               variantColor="green"
               mr={3}
               isDisabled={!formState.dirty}

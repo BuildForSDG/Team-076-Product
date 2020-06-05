@@ -20,7 +20,7 @@ const Features = () => {
       gap={-1}
       className={cx(styles.container)}
     >
-      <Box gridColumn="2/7" className={cx(styles.herotext)}>
+      <Box gridColumn={{sm: "2/12", lg: "2/7" }} className={cx(styles.herotext)}>
         <h1>
           We are empowering
           <br />
@@ -31,14 +31,14 @@ const Features = () => {
         <Button
           onClick={handleSignUp}
           variantColor="green"
-          bg="green.900"
+          bg="fgreen.900"
           size="lg"
           className={styles.navbutton}
         >
           Sign up
         </Button>
       </Box>
-      <Box gridColumn="7/12" className={cx(styles.sidepic)}>
+      <Box display={{sm: "none", md: "block", lg: "block", xl: "block"}} gridColumn={{sm: "2/12", lg: "7/12" }} gridRow={{sm: "2",  lg: "1"}} className={cx(styles.sidepic)}>
         <img src={sidepicture} />
       </Box>
       <Box gridColumn="6/8" gridRow="3"></Box>

@@ -1,0 +1,12 @@
+.container {
+    background: #f3fdfe;
+    /* height: calc(100vh - 75px);
+    place-items: center; */
+  }
+
+  .boxstyle {
+    background: white;
+    border-radius: 8px;
+    /* padding-left: 40px;
+    padding-right: 40px; */
+  }

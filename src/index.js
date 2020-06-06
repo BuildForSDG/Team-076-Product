@@ -1,14 +1,50 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import * as serviceWorker from "./serviceWorker";
+import { Provider } from "react-redux";
+import { reduxStoreConfig } from "./store/ReduxStoreConfig";
+import { BrowserRouter } from "react-router-dom";
+import { ThemeProvider } from "@chakra-ui/core";
+import { theme } from "@chakra-ui/core";
+
+// customing theming forn chakra
+
+const breakpoints = ["320px", "620px", "960px", "1200px"];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
+const customTheme = {
+  ...theme,
+  colors: {
+    ...theme.colors,
+    fgreen: {
+      900: "#31C28C",
+      800: "#57B894",
+      700: "#75DFB8",
+    },
+    grey: "#C3D1D2",
+    blueblack: "#13031E"
+  },
+breakpoints
+};
+
+const store = reduxStoreConfig();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <ThemeProvider theme={customTheme}>
+    <Provider store={store}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <App />
+        </React.StrictMode>
+      </BrowserRouter>
+    </Provider>
+  </ThemeProvider>,
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change

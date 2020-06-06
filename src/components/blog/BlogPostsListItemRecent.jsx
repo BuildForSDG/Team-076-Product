@@ -2,7 +2,7 @@ import React from "react";
 import { Flex, Avatar, Box, Text, Badge } from "@chakra-ui/core";
 import { Link } from 'react-router-dom';
 
-const BlogPostsListItem = (props) => {
+const BlogPostsListItemRecent = (props) => {
   const { post } = props;
   return (
     <Flex pt="25px">
@@ -14,10 +14,10 @@ const BlogPostsListItem = (props) => {
             New
           </Badge>
         </Text>
-        <Text fontSize="sm">{post.content}</Text>
+        <Text display={{sm: "none", md:"flex", lg:"flex"}} fontSize="sm">{post.content}</Text>
       </Box>
     </Flex>
   );
 };
 
-export default BlogPostsListItem;
+export default BlogPostsListItemRecent;

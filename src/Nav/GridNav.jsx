@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, List, ListItem, Icon, Button } from "@chakra-ui/core";
+import { Grid, Box, List, Icon, Button } from "@chakra-ui/core";
 import styles from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import cx from "classnames";

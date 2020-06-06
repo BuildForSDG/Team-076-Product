@@ -13,10 +13,10 @@ function People() {
       className={styles.container}
       pt="30px"
       pb="30px"
-      pl="30px"
-      pr="30px"
+      pl={{sm:"5px",md:"30px"}}
+      pr={{sm:"5px",md:"30px"}}
     >
-      <Box className={styles.boxstyle} gridColumn="4/10">
+      <Box pl={{sm: "20px", md: "30px"}} pr={{sm: "20px", md: "30px"}} className={styles.boxstyle} gridColumn={{sm: "1/13", md: "3/11", lg: "4/10" }}>
         {posts.map(post => 
            <PeopleStatusList key={post.id} post={post}/>
         )};

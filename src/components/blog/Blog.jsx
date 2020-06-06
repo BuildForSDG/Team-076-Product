@@ -30,10 +30,10 @@ const Blog = () => {
       gap={4}
       className={styles.container}
       pt="30px"
-      pl="30px"
-      pr="30px"
+      pl={{sm:"1px",md:"30px"}}
+      pr={{sm:"1px",md:"30px"}}
     >
-      <Box className={styles.boxstyle} gridColumn="1/8">
+      <Box pb={{sm:"30px", lg:"10px"}} className={styles.boxstyle} gridColumn={{sm: "1/13", lg: "1/8" }}>
         <h1 color="blueblack" className={styles.centertext}>
           Welcome to the <br />
           <span className={styles.green}>Farmapp</span> community
@@ -49,7 +49,7 @@ const Blog = () => {
             placeholder="Search"
           />
         </InputGroup>
-        <Grid templateColumns="repeat(3, 1fr)" gap={8} pt="10px">
+        <Grid display={{sm: "none", lg:"grid"}} templateColumns="repeat(3, 1fr)" gap={8} >
           <Box className={styles.centertext}>
             <Stack spacing={-8}>
               <Text color="blueblack" fontWeight="bold" fontSize="5xl">
@@ -77,7 +77,7 @@ const Blog = () => {
         </Grid>
       </Box>
 
-      <Box className={styles.boxstyle} gridColumn="8/13">
+      <Box className={styles.boxstyle} gridColumn={{sm: "1/13", lg: "8/13" }}>
         <Stack pt="30px" spacing={20}>
           <strong color="blueblack" className={styles.headtext}>
             Connect
@@ -85,7 +85,7 @@ const Blog = () => {
         </Stack>
       </Box>
 
-      <Box mb="40px" pb="30px" className={styles.boxstyle} gridColumn="1/8">
+      <Box mb="40px" pb="30px" className={styles.boxstyle} gridColumn={{sm: "1/13", lg: "1/8" }}>
         <Stack pt="30px">
           <strong color="blueblack" className={styles.headtext}>
             Recent
@@ -94,7 +94,7 @@ const Blog = () => {
         </Stack>
       </Box>
 
-      <Box mb="40px" pb="30px" className={styles.boxstyle} gridColumn="8/13">
+      <Box mb="40px" pb="30px" className={styles.boxstyle} gridColumn={{sm: "1/13", lg: "8/13" }}>
         <Stack pt="30px" spacing={20}>
           <strong className={styles.headtext}>Success stories</strong>
         </Stack>

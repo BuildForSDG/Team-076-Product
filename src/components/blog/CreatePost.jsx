@@ -40,15 +40,15 @@ const CreatePost = () => {
       gap={4}
       className={styles.container}
       pt="30px"
-      pl="30px"
-      pr="30px"
+      pl={{sm:"1px",md:"30px"}}
+      pr={{sm:"1px",md:"30px"}}
     >
       <Box
         className={styles.boxstyle}
         mb="50px"
         pt="10px"
         pb="40px"
-        gridColumn="1/8"
+        gridColumn={{sm: "1/13", lg: "1/8" }}
       >
         <Stack pt="30px" spacing={8}>
           <strong color="blueblack" className={styles.headtext}>
@@ -104,7 +104,7 @@ const CreatePost = () => {
         mb="50px"
         pt="10px"
         pb="40px"
-        gridColumn="8/13"
+        gridColumn={{sm: "1/13", lg: "8/13" }}
       >
         <Stack pt="30px" spacing={8}>
           <strong color="blueblack" className={styles.headtext}>
@@ -128,9 +128,9 @@ const CreatePost = () => {
               width="40%"
               ml="70px"
               className={styles.navbutton}
-              bg="green.900"
+              bg="fgreen.900"
               variantColor="green"
-              // isDisabled={!formState.dirty}
+              isDisabled={!formState.dirty}
               type="submit"
             >
               Ask

@@ -44,15 +44,19 @@ const BlogPostDetailed = () => {
       gap={4}
       className={styles.container}
       pt="30px"
-      pl="30px"
-      pr="30px"
+      pl={{sm:"1px", md:"30px"}}
+      pr={{sm:"1px", md:"30px"}}
+      // mr={{sm:"5px", lg: "10px"}}
+      // ml={{sm:"5px", lg: "10px"}}
     >
       <Box
         className={styles.boxstyle}
         mb="20px"
         pt="10px"
         pb="40px"
-        gridColumn="2/12"
+        pr={{sm: "20px", lg: "40px"}}
+        pl={{sm: "20px", lg: "40px"}}
+        gridColumn={{sm: "1/13", lg: "2/12"}}
       >
         <Heading mb={4}>{blogPost[0].title}</Heading>
         <Text fontSize="xl">{blogPost[0].content}</Text>
@@ -63,7 +67,9 @@ const BlogPostDetailed = () => {
         mb="50px"
         pt="10px"
         pb="40px"
-        gridColumn="2/9"
+        pr={{sm: "20px", lg: "40px"}}
+        pl={{sm: "20px", lg: "40px"}}
+        gridColumn={{sm: "1/13", lg: "2/9" }}
         gridRow="2"
       >
         <Stack>
@@ -79,8 +85,8 @@ const BlogPostDetailed = () => {
                   placeholder="Write a comment"
                   //ref={register({ validate: validateInput })}
                   size="lg"
-                  width="200%"
-                  h="130px"
+                  width={{sm: "80%", lg: "130%", xl: "200%"}}
+                  h={{sm: "100px", lg: "130px"}}
                   resize="vertical"
                 />
               </FormControl>

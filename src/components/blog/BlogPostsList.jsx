@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import BlogPostsListItem from "./BlogPostsListItem";
+import BlogPostsListItemRecent from "./BlogPostsListItemRecent";
 
 const BlogPostsList = (props) => {
   const { posts } = props;
@@ -7,7 +7,7 @@ const BlogPostsList = (props) => {
   var size = 3;
   var postsList = posts
     .slice(0, size)
-    .map((post) => <BlogPostsListItem key={post.id} post={post} />);
+    .map((post) => <BlogPostsListItemRecent key={post.id} post={post} />);
   return <Fragment>{postsList}</Fragment>;
 };
 
